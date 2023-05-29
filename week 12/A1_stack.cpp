@@ -4,11 +4,11 @@
 #include<algorithm>
 using namespace std;
 const int maxm=1e5+5;
-int stk[maxm],head;//?
+int stk[maxm],head;//栈
 int ans[maxm];
 int a[maxm];
 int n;
-int ask(int x){//???x??????
+int ask(int x){//找出比x小的最大下标
     int l=1,r=head;
     int res=0;
     while(l<=r){
@@ -30,10 +30,10 @@ int main(){
     for(int i=1;i<=n;i++){
         cin>>a[i];
     }
-    for(int i=n;i>=1;i--){//?????
-        if(head==0||a[i]<=a[stk[head]]){//?????????????,???????
+    for(int i=n;i>=1;i--){//栈顶最小值
+        if(head==0||a[i]<=a[stk[head]]){//如果栈为空或者小于等于栈顶，说明没有更小的
             ans[i]=-1;
-            stk[++head]=i;//??
+            stk[++head]=i;//入栈
         }else{
             ans[i]=ask(i)-i-1;
         }
