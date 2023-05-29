@@ -21,7 +21,7 @@ int main()
             ans[i]=-1;
             q[++t]=k;
         }
-        else//??????????????arr[i]??????
+        else//二分查找单调队列中第一个小于arr[i]的值的索引值
         {
            int l=1,r=t+1;
            while(l<r)
